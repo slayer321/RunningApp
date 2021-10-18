@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import android.view.View
+import com.example.runnningapp.MainActivity
 
 import com.example.runnningapp.R
 import com.example.runnningapp.helpers.InputValidation
@@ -125,10 +126,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         if (databaseHelper!!.checkUser(textInputEditTextEmail!!.text.toString().trim { it <= ' ' }, textInputEditTextPassword!!.text.toString().trim { it <= ' ' })) {
 
 
-           // val accountsIntent = Intent(activity, UsersListActivity::class.java)
-            //accountsIntent.putExtra("EMAIL", textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
-            //emptyInputEditText()
-            //startActivity(accountsIntent)
+            val accountsIntent = Intent(activity, MainActivity::class.java)
+            accountsIntent.putExtra("EMAIL", textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
+            emptyInputEditText()
+            startActivity(accountsIntent)
 
 
         } else {
